@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':plain-ui'
