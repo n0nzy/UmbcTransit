@@ -1,15 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cadextech.crypton.umbctransit.StopsFragment">
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/table_header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
 
-        <AutoCompleteTextView
+        <EditText
             android:id="@+id/ui_search_stop"
             android:layout_width="match_parent"
             android:layout_height="35dp"
@@ -55,11 +58,20 @@
             android:padding="15dp"
             android:text="A / I: Arbutus/Irvington" />
 
-        <fragment
-            android:id="@+id/route_list2"
+        <TextView
+            android:id="@+id/route3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="15dp"
-            class="com.cadextech.crypton.umbctransitguide.plainui.RouteListFragment" />
+            android:text="DB: Downtown B" />
+
+        <TextView
+            android:id="@+id/route4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="H / S: Halethorpe / Satellite" />
 
     </LinearLayout>
+
+</FrameLayout>

@@ -5,7 +5,14 @@
 /build
 
 # res folder
-res/
+res/drawable/
+res/drawable-hdpi/
+res/drawable-mdpi/
+res/drawable-xhdpi/
+res/drawable-xxhdpi/
+
+*.png
+*.jpg
 
 # Built application files
 *.apk
@@ -38,3 +45,5 @@ proguard/
 ./plain-ui/.gitignore
 ./plain-ui/build.gradle
 
+# ignore me!
+/.gitignore

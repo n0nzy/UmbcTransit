@@ -3,15 +3,20 @@ package com.cadextech.crypton.umbctransitguide.plainui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,7 +25,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private static final String[] STOPS = new String[]{"Arbutus/Irvington", "Arundel/BWI Marc Line", "Catonsville", "Downtown A", "Downtown B", "Halethorpe/Satelite"};
+    private static final String[] ROUTES = new String[]{"Arbutus/Irvington", "Arundel/BWI Marc Line", "Catonsville", "Downtown A", "Downtown B", "Halethorpe/Satelite"};
     static private final String TAG = "Activity Tester";
 
     @Override
@@ -31,7 +36,7 @@ public class MainActivity extends Activity {
 
         //This section handles the auto-complete form
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.ui_search_stop);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, STOPS);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, ROUTES);
         textView.setAdapter(adapter);
 
         //This section handles the auto-complete action
@@ -52,24 +57,13 @@ public class MainActivity extends Activity {
         });
 
         //---------------------------------------------
-        ListView listOfRoutes = new ListView(this);
-
-        //setListAdapter(new ArrayAdapter<String>(TitlesListActivity.this, R.layout.list_text_item_layout, TitlesListActivity.mTitleArray));
-        String[] routes_available = {"B: Bowensville", "C: Catonsville", "DA: Downtown A", "DB: Downtown B"};
-
-        ListView lv = (ListView) findViewById(R.id.route_label);
-
-        ArrayAdapter<String> routeAdapter = new ArrayAdapter(this, R.layout.list_item, routes_available); //new ListAdapter<String>(this, R.layout.list_avail_route, routes_available);
-        listOfRoutes.setAdapter(routeAdapter);
-        setContentView(listOfRoutes);
-
-        //ListView mListView;
+        //ListView listOfRoutes = new ListView(this);
 
         // Get a reference to the ListView...
-        //mListView = (ListView) findViewById(R.id.route_label);
+        ListView listOfRoutes = (ListView) findViewById(R.id.route_label);
 
-        // ...and attach this adapter to it.
-        //mListView.setAdapter(routeAdapter);
+        myAdapter customAdapter = new myAdapter(this, ROUTES);
+        //listOfRoutes.setAdapter(customAdapter);
 
         Log.i(TAG, "Loaded Main Activity!!!");
         
@@ -117,6 +111,32 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    class myAdapter extends ArrayAdapter<String>
+    {
+        TextView label;
+        ImageView image;
+        View row;
+
+        public myAdapter(Context context,String[] arr)
+        {
+            super(context, R.layout.list_item, arr);
+        }
+
+        public View getView(final int position, View convertView, ViewGroup parent)
+        {
+            try{
+                LayoutInflater inflater=getLayoutInflater();
+                row = inflater.inflate(R.layout.list_item, parent, false);
+                label = (TextView)row.findViewById(R.id.item_title);
+                label.setText(ROUTES[position]);
+                label.setTextColor(Color.YELLOW);
+            }catch(Exception e){
+
+            }
+            return row;
+        }
     }
 
 } // end class
