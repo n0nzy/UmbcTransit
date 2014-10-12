@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cadextech.crypton.umbctransitguide.plainui" >
 
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="@string/app_name"/>
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".RouteActivity"
+            android:label="@string/title_activity_route"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cadextech.crypton.umbctransitguide.plainui.MainActivity" />
         </activity>
     </application>
 
