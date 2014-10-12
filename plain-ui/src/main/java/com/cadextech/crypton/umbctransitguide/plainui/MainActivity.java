@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -26,10 +27,12 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     private static final String[] ROUTES = new String[]{"Arbutus/Irvington", "Arundel/BWI Marc Line", "Catonsville", "Downtown A", "Downtown B", "Halethorpe/Satelite"};
-    static private final String TAG = "Activity Tester";
+    static private final String TAG = "MethodTester";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.i(TAG, "Loaded Main Activity!!!");
         
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,46 +46,24 @@ public class MainActivity extends Activity {
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Context context = getApplicationContext();
+                //CharSequence text = "textView was clicked!";
+                //int duration = Toast.LENGTH_SHORT;
+
+                //Toast.makeText(context, text, duration).show();
+
                 Toast.makeText(getApplicationContext(), "Chosen Route is:" + parent.getAdapter().getItem(position), Toast.LENGTH_SHORT).show();
             }
         });
 
-        TextView mTextView = (TextView) findViewById(R.id.route1);
-        // Declare and  setup click.
-        mTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activateTextView();
-            }
-        });
-
-        //---------------------------------------------
-        //ListView listOfRoutes = new ListView(this);
-
+        // --------------------------------------------------------------------- \\
         // Get a reference to the ListView...
         ListView listOfRoutes = (ListView) findViewById(R.id.route_label);
 
-        myAdapter customAdapter = new myAdapter(this, ROUTES);
+        MyRouteListAdapter customAdapter = new MyRouteListAdapter(this, ROUTES);
         //listOfRoutes.setAdapter(customAdapter);
-
-        Log.i(TAG, "Loaded Main Activity!!!");
         
     }// end onCreate()
-
-    private void activateTextView() {
-        //Log.i(TAG, "Entered page for clicked textview");
-
-        //Context context = getApplicationContext();
-        //CharSequence text = "textView was clicked!";
-        //int duration = Toast.LENGTH_SHORT;
-
-        //Toast.makeText(context, text, duration).show();
-
-        Intent intent = new Intent(this,RouteActivity.class);
-        this.startActivity(intent);
-
-    }  // end method()
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,15 +71,6 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
 
         return true;
-    }
-
-    private void prepareUI() {
-        TextView hw = (TextView) findViewById(R.id.ui_agency_name);
-        hw.setText("Hello I/O 2013!");
-
-        //hw.setBackground(getCurrentFocus().getBackground());
-        //int maxWidth = hw.getMaxWidth();
-        //hw.setMinHeight(maxWidth);
     }
 
     @Override
@@ -113,13 +85,12 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    class myAdapter extends ArrayAdapter<String>
-    {
+    class MyRouteListAdapter extends ArrayAdapter<String> {
         TextView label;
         ImageView image;
         View row;
 
-        public myAdapter(Context context,String[] arr)
+        public MyRouteListAdapter(Context context,String[] arr)
         {
             super(context, R.layout.list_item, arr);
         }
@@ -137,6 +108,6 @@ public class MainActivity extends Activity {
             }
             return row;
         }
-    }
+    } // end class
 
 } // end class

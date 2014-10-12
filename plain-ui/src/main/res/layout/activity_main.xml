@@ -41,20 +41,6 @@
             android:textAppearance="?android:textAppearanceSmall"
             android:text="The following routes are currently in service: " />
 
-        <TextView
-            android:id="@+id/route1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="A / B: Arundel/BWI MARC Line" />
-
-        <TextView
-            android:id="@+id/route2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="A / I: Arbutus/Irvington" />
-
         <fragment
             android:id="@+id/route_list2"
             android:layout_width="match_parent"
