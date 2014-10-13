@@ -17,5 +17,5 @@
          typically from the action bar.  The ActionBar is limited real estate, so shorter is better.
     -->
     <string name="action_settings">Settings</string>
-    <string name="action_filter_list">F-List</string>
+    <string name="action_route_list">F-List</string>
 </resources>

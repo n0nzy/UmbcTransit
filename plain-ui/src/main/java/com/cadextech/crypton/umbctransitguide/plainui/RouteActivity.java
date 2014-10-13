@@ -1,12 +1,25 @@
 package com.cadextech.crypton.umbctransitguide.plainui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-
+/**
+ * Route Activity
+ *
+ * This file contains the details (all available stops) associated with the chosen route.
+ *
+ *
+ * Licensed under The MIT License
+ * Redistributions of files should please contain the above copyright notice.
+ *
+ * @author        Ugwu Chinonso .O.
+ * @copyright     Copyright 2014, http://cadextech.com
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
 public class RouteActivity extends Activity {
 
     @Override
@@ -39,12 +52,22 @@ public class RouteActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
+        // Handle action bar item clicks here.
+        // The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (R.id.action_settings == id) {
+
+        if (id == R.id.action_settings) {
             return true;
         }
+
+        if (id == R.id.action_route_list) {
+            startActivity(new Intent(this, RouteListActivity.class));
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
-    }
-}
+
+    } // end method()
+
+} // End class RouteActivity
