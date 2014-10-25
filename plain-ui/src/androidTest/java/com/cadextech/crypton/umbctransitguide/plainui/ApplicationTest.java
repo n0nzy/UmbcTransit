@@ -1,4 +1,4 @@
-package com.cadextech.crypton.umbctransitguide.plainui;
+package co.ugwu.nonso.umbctransitguide.plainui;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cadextech.crypton.umbctransitguide.plainui" >
+    package="co.ugwu.nonso.umbctransitguide.plainui" >
 
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19" />
+
+    <!-- This permission is necessary in order for this app to perform network access. -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -30,7 +33,7 @@
             android:parentActivityName=".RouteListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cadextech.crypton.umbctransitguide.plainui.RouteListActivity" />
+                android:value="co.ugwu.nonso.umbctransitguide.plainui.RouteListActivity" />
         </activity>
 
     </application>

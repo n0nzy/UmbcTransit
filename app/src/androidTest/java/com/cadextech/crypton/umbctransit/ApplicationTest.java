@@ -1,4 +1,4 @@
-package com.cadextech.crypton.umbctransit;
+package co.ugwu.nonso.umbctransit;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
