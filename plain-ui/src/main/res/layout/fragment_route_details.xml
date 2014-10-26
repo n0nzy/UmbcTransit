@@ -1,20 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Using a FrameLayout because this ViewGroup has only one child element, it is more efficient to use a FrameLayout instead of a RelativeLayout -->
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="co.ugwu.nonso.umbctransitguide.plainui.RouteActivity">
+    android:paddingLeft="@dimen/no_margin"
+    android:paddingRight="@dimen/no_margin"
+    android:paddingTop="@dimen/no_margin"
+    android:paddingBottom="@dimen/no_margin"
+    android:orientation="vertical"
+    tools:context="co.ugwu.nonso.umbctransitguide.plainui.RouteDetailsActivity">
+
+    <TextView
+        android:id="@+id/textview_route_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#003366"
+        android:text="@string/stop_name" />
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stops_list_desc"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:background="#006699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="Stops in this route are serviced in the ffg order" />
+
+        <TextView
+            android:id="@+id/stops_title_arrival"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:background="#006699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="Arrival In" />
+
+    </LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:background="#446699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="Stops in this route are serviced in the ffg order" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:background="#446699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="Arrival In" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:gravity="left"
+                android:background="#cccccc"
+                android:textSize="12sp"
+                android:textColor="#000044"
+                android:text="Commons Drive and Park Road" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:gravity="left"
+                android:background="#cccccc"
+                android:textColor="#000044"
+                android:textSize="10sp"
+                android:text="[Stop Code: 4726]" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/list_item_high_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="1dp"
+                android:gravity="center_horizontal"
+                android:background="#cccccc"
+                android:textColor="#000044"
+                android:textSize="12sp"
+                android:text="8 &amp; 56 minutes"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listview_busstops"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</FrameLayout>
+</LinearLayout>

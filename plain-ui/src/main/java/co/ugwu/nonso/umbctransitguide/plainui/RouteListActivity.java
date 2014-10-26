@@ -6,14 +6,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
+
 
 /**
  * RouteList Activity : Home Page & Launcher Activity
@@ -35,20 +31,21 @@ public class RouteListActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onCreate");
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_route_list2);
+        setContentView(R.layout.activity_route_list);
 
         //-----------------------------------------------------------------
-        if (savedInstanceState == null) {
-            if (DEBUG_FLAG) Log.d(DEBUG_TAG, " onCreate() : Previous state info was saved! ");
-
+        if (null == savedInstanceState) {
+            if (DEBUG_FLAG) Log.d(DEBUG_TAG, " onCreate() : No previous state available to restore! ");
             //Invoke the Fragment that displays a dynamic list of available stops...
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.list_of_routes, new RouteListFragment())
                     .commit();
         } else {
-            if (DEBUG_FLAG) Log.d(DEBUG_TAG, " onCreate() : No previous state was saved! ");
+            if (DEBUG_FLAG) Log.d(DEBUG_TAG, " onCreate() : Restoring previous state! ");
         }
 
         //------------------------------------------------------------------
@@ -88,11 +85,11 @@ public class RouteListActivity extends ActionBarActivity {
         // The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (R.id.action_settings == id) {
             return true;
         }
 
-        if (id == R.id.action_route_list) {
+        if (R.id.action_route_list == id) {
             startActivity(new Intent(this, RouteListActivity.class));
             return true;
         }
@@ -100,5 +97,40 @@ public class RouteListActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
 
     } // end method()
+
+    @Override
+    protected void onStart() {
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onStart");
+        super.onStart();
+        // The activity is about to become visible.
+    }
+
+    @Override
+    protected void onResume() {
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onResume");
+        super.onResume();
+        // The activity has become visible (it is now "resumed").
+    }
+
+    @Override
+    protected void onPause() {
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onPause");
+        super.onPause();
+        // Another activity is taking focus (this activity is about to be "paused").
+    }
+
+    @Override
+    protected void onStop() {
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onStop");
+        super.onStop();
+        // The activity is no longer visible (it is now "stopped")
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (DEBUG_FLAG) Log.d(DEBUG_TAG, "in onDestroy");
+        super.onDestroy();
+        // The activity is about to be destroyed.
+    }
 
 } // end class
