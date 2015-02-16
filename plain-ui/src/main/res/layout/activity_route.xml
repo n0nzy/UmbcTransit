@@ -20,7 +20,7 @@
         android:textSize="20dp"
         android:textColor="#FFFFFF"
         android:background="#003366"
-        android:text="@string/stop_name" />
+        android:text="@string/default_route_name" />
 
     <TextView
         android:id="@+id/stops_list_desc"

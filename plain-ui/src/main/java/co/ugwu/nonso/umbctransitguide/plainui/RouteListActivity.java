@@ -14,7 +14,7 @@ import android.widget.EditText;
 /**
  * RouteList Activity : Home Page & Launcher Activity
  *
- * This file acts as the starting point by presenting you with a list of available routes to select from.
+ * This class acts as the starting point by loading the RouteListFragment Class.
  *
  *
  * Licensed under The MIT License
@@ -83,6 +83,8 @@ public class RouteListActivity extends ActionBarActivity {
 
         // Handle action bar item clicks here.
         // The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
+
+        // Get the Id of the selected menu item
         int id = item.getItemId();
 
         if (R.id.action_settings == id) {

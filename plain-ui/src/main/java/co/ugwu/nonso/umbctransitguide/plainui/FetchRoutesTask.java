@@ -127,7 +127,7 @@ public class FetchRoutesTask extends AsyncTask<String, Void, String[]> {
     } // end doInBackground()
 
     /**
-     * <p>Runs on the UI thread after #doInBackground(). The specified result is the value returned by #doInBackground().</p>
+     * <p>Runs on the UI thread after #doInBackground(). The specified 'result' Parameter is the value returned by #doInBackground().</p>
      *
      * <p>This method won't be invoked if the task was cancelled.</p>
      *
@@ -142,13 +142,15 @@ public class FetchRoutesTask extends AsyncTask<String, Void, String[]> {
         //super.onPostExecute(result);
 
         if (result != null) {
+
+            // New data is back from the server.  Hooray!
             ArrayAdapter<String> routeListAdapter = null;
             //myResultAdapter.clear();
             for(String routeNameStr : result) {
                 routeListAdapter.add(routeNameStr);
             }
-            // New data is back from the server.  Hooray!
-        }
+
+        } // end if
 
     } // end method()
 

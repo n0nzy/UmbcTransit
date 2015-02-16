@@ -1,20 +1,27 @@
 apply plugin: 'android'
 
 android {
+    signingConfigs {
+        config {
+        }
+        config2 {
+            keyAlias 'key'
+            keyPassword 'key'
+        }
+    }
     compileSdkVersion 19
     buildToolsVersion '20.0.0'
-
     defaultConfig {
         applicationId "co.ugwu.nonso.umbctransitguide.plainui"
-        minSdkVersion 15
-        targetSdkVersion 20
-        versionCode 1
-        versionName "1.0"
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix 'd'
         }
     }
     productFlavors {

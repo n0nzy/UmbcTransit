@@ -1,6 +1,10 @@
 package co.ugwu.nonso.umbctransit;
 
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,17 +12,12 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-
 
 public class MainActivity extends Activity {
 
 
     private static final String STOPS_TAB = "Stops";
-    private static final String FAVS_TAB  = "Favorities";
+    private static final String FAVS_TAB  = "Favorites";
 
     protected static final String THUMBNAIL_IDS = "thumbNailIDs";
 
@@ -94,4 +93,5 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
+
+} // end class

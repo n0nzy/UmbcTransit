@@ -2,6 +2,7 @@ package co.ugwu.nonso.umbctransitguide.plainui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import android.support.v4.app.Fragment;
-
 /**
+ * This class presents to you a list of available routes to select from
+ *
  * Created on       on 10/24/14.
  * @author        Ugwu Chinonso .O.
  */
@@ -23,7 +24,8 @@ public class RouteListFragment extends Fragment {
 
     //public static String[] mRouteList = {"A/I : Arbutus/Irvington", "A/B : Arundel/BWI Marc Line", "C : Catonsville", "D A : Downtown A", "D B : Downtown B", "H/S : Halethorpe/Satelite" };
 
-    protected String mAgencyId = obtainAgencyId();
+    //protected String mAgencyId = obtainAgencyId();
+    protected final String AGENCY_ID = "112";
 
     public RouteListFragment() {
         // Required empty public constructor
@@ -38,7 +40,8 @@ public class RouteListFragment extends Fragment {
         FetchRoutesTask fetchRoutesTask = new FetchRoutesTask();
 
         // This passes the agency ID of UMBC to the background thread of the FetchRoutesTask class.
-        fetchRoutesTask.execute(mAgencyId);
+        //fetchRoutesTask.execute(mAgencyId);
+        fetchRoutesTask.execute(obtainAgencyId());
 
     } // end onCreate()
 
@@ -72,6 +75,7 @@ public class RouteListFragment extends Fragment {
                 //int duration = Toast.LENGTH_SHORT;
                 //Toast.makeText(getActivity(), clickedRoute, duration).show();
 
+                // This calls the next Activity which is responsible for displaying details about the chosen route
                 Intent intent = new Intent(getActivity(), RouteDetailsActivity.class).putExtra(Intent.EXTRA_TEXT, clickedRouteName);
                 startActivity(intent);
             }
@@ -86,7 +90,10 @@ public class RouteListFragment extends Fragment {
     } // end method()
 
     private String obtainAgencyId() {
-        return "112";
+
+        // UMBC's Agency ID is 112, obviously not the best way to implement this; will work on this later
+        //return "112";
+        return this.AGENCY_ID;
     }
 
 } // end Class

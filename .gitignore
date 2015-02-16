@@ -1,8 +1,14 @@
 # Android Studio Defaults
 /local.properties
-/.idea/workspace.xml
+# now redundant -> /.idea/workspace.xml
 .DS_Store
 /build
+
+## Directory-based project format -> Important!
+.idea/
+
+# Another Project file
+*.iml
 
 # res folder
 res/drawable/
@@ -40,6 +46,9 @@ proguard/
 
 # Log Files
 *.log
+
+# files manually created by Nonso
+*.txt~
 
 # .gitignore files in sub-modules
 ./plain-ui/.gitignore
