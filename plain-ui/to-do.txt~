@@ -1,0 +1,18 @@
+Next....
+
+Create custom listview with multiple widgets per list item!...done!
+
+Create a StopDetails Activity (& Fragment) that receives input from a RouteDetailsFragment...done!
+- Input Received: The StopId of a selected busstop...done!
+
+check if every view in RouteDetailsActivity & RouteDetailsFragment has a unique view ID, might be cause of issue with saving state when going back to parent activity
+
+library to build database and content provider
+
+http://developer.android.com/guide/topics/data/index.html | Data Storage Guide
+http://developer.android.com/reference/android/widget/SimpleCursorAdapter.html
+http://developer.android.com/guide/topics/data/data-storage.html#db
+http://developer.android.com/guide/topics/providers/content-provider-basics.html#ContentURIs
+http://developer.android.com/guide/topics/providers/content-provider-creating.html
+http://developer.android.com/reference/android/content/ContentProvider.html
+http://developer.android.com/guide/components/loaders.html
