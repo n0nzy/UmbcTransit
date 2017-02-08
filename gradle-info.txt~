@@ -1,0 +1,17 @@
+My android studio version 0.8.9 uses:
+- Gradle Plugin: v0.12, which depends on Gradle 1.10
+
+My android studio version 0.8.11:
+- supports Gradle Plugin v0.12
+- can support Gradle Plugin: v0.13, which requires Gradle 2.1 (this plugin not in use in any projects; i only have Gradle 2.0 installed) 
+
+My android studio version 0.8.14 uses:
+- Gradle Plugin: v0.12.0, which depends on Gradle 2.0
+
+Not a good idea to open the 'Project: umbctransit' in a version of Android Studio later than 0.8.9, because the project is currently configured to use Studio's gradle-plugin v0.12, and manually set to local installation of Gradle 1.10
+
+- Gradle Plugin: v0.13.0 (not installed), requires Gradle 2.1
+
+- Gradle Plugin: v0.14.0 (not installed), requires Gradle 2.1, but requires Android Studio version 0.9.0
+
+- Gradle Plugin: v0.14.4 (not installed), supports Gradle 2.1, 2.2, 2.2.1
