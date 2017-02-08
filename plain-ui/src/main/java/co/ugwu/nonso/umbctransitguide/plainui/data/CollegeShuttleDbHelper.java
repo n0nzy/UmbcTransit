@@ -4,10 +4,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import co.ugwu.nonso.umbctransitguide.plainui.Message;
 import co.ugwu.nonso.umbctransitguide.plainui.data.CollegeShuttleContract.AgencyEntry;
+import co.ugwu.nonso.umbctransitguide.plainui.data.CollegeShuttleContract.ArrivalsEntry;
 import co.ugwu.nonso.umbctransitguide.plainui.data.CollegeShuttleContract.RoutesEntry;
 import co.ugwu.nonso.umbctransitguide.plainui.data.CollegeShuttleContract.StopsEntry;
-import co.ugwu.nonso.umbctransitguide.plainui.data.CollegeShuttleContract.ArrivalsEntry;
 
 /**
  * CollegeShuttleDbHelper: creates and updates the only database for this Project ( CollegeShuttle App )
@@ -35,7 +36,7 @@ public class CollegeShuttleDbHelper extends SQLiteOpenHelper {
 
         // Create a table to the agency ID for the school...Should only contain a single entry
         final String SQL_CREATE_AGENCY_TABLE = "CREATE TABLE " + AgencyEntry.TABLE_NAME + " (" +
-                AgencyEntry._ID + " INTEGER PRIMARY KEY," +
+                AgencyEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 AgencyEntry.COLUMN_AGENCY_ID + " INTEGER UNIQUE NOT NULL, " +
                 AgencyEntry.COLUMN_AGENCY_NAME + " TEXT NULL, " +
                 AgencyEntry.COLUMN_AGENCY_SHORT_NAME + " TEXT UNIQUE NOT NULL, " +
@@ -49,7 +50,7 @@ public class CollegeShuttleDbHelper extends SQLiteOpenHelper {
 
         // Create a table to hold [bus] routes.
         final String SQL_CREATE_ROUTES_TABLE = "CREATE TABLE " + RoutesEntry.TABLE_NAME + " (" +
-                RoutesEntry._ID + " INTEGER PRIMARY KEY," +
+                RoutesEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 RoutesEntry.COLUMN_ROUTE_ID + " INTEGER UNIQUE NOT NULL, " +
                 RoutesEntry.COLUMN_ROUTE_SHORT_NAME + " TEXT UNIQUE NOT NULL, " +
                 RoutesEntry.COLUMN_ROUTE_LONG_NAME + " TEXT UNIQUE NOT NULL, " +
@@ -64,7 +65,7 @@ public class CollegeShuttleDbHelper extends SQLiteOpenHelper {
         // Create a table to hold [bus] stops.
         // A stop consists of the string supplied in the stop name, the stop code, its latitude and longitude
         final String SQL_CREATE_STOPS_TABLE = "CREATE TABLE " + StopsEntry.TABLE_NAME + " (" +
-                StopsEntry._ID + " INTEGER PRIMARY KEY," +
+                StopsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 StopsEntry.COLUMN_STOP_ID + " INTEGER UNIQUE NOT NULL, " +
                 StopsEntry.COLUMN_STOP_NAME + " TEXT UNIQUE NOT NULL, " +
                 StopsEntry.COLUMN_STOP_CODE + " TEXT NOT NULL, " +
@@ -108,9 +109,16 @@ public class CollegeShuttleDbHelper extends SQLiteOpenHelper {
                 //  " UNIQUE (" + ArrivalsEntry.COLUMN_ARRIVAL_AT + ", " + ArrivalsEntry.COLUMN_SERVICE_STOP_ID + ") ON CONFLICT REPLACE);";
                 " UNIQUE (" + ArrivalsEntry.COLUMN_ARRIVAL_AT + ", " + ArrivalsEntry.COLUMN_SERVICE_STOP_ID + ", "+ ArrivalsEntry.COLUMN_SERVICE_ROUTE_ID + ") ON CONFLICT REPLACE);";
 
+        Message.log(SQL_CREATE_AGENCY_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_AGENCY_TABLE);
+
+        Message.log(SQL_CREATE_ROUTES_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_ROUTES_TABLE);
+
+        Message.log(SQL_CREATE_STOPS_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_STOPS_TABLE);
+
+        Message.log(SQL_CREATE_ARRIVALS_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_ARRIVALS_TABLE);
 
     }// end onCreate()

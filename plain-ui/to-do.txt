@@ -9,9 +9,12 @@ check if every view in RouteDetailsActivity & RouteDetailsFragment has a unique 
 
 library to build database and content provider
 
+http://developer.android.com/guide/topics/data/index.html | Data Storage Guide
 http://developer.android.com/reference/android/widget/SimpleCursorAdapter.html
 http://developer.android.com/guide/topics/data/data-storage.html#db
 http://developer.android.com/guide/topics/providers/content-provider-basics.html#ContentURIs
 http://developer.android.com/guide/topics/providers/content-provider-creating.html
 http://developer.android.com/reference/android/content/ContentProvider.html
 http://developer.android.com/guide/components/loaders.html
+http://developer.android.com/reference/android/content/AsyncTaskLoader.html
+

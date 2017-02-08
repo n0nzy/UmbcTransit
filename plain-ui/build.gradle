@@ -9,7 +9,7 @@ android {
             keyPassword 'key'
         }
     }
-    compileSdkVersion 19
+    compileSdkVersion 20
     buildToolsVersion '20.0.0'
     defaultConfig {
         applicationId "co.ugwu.nonso.umbctransitguide.plainui"
