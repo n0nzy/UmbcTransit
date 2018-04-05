@@ -1,0 +1,44 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp"
+    android:orientation="vertical"
+    tools:context="co.ugwu.nonso.umbctransitguide.plainui.RouteActivity">
+
+    <TextView
+        android:id="@+id/route_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:background="#003366"
+        android:text="@string/default_route_name" />
+
+    <TextView
+        android:id="@+id/stops_list_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="5dp"
+        android:gravity="center_horizontal"
+        android:background="#006699"
+        android:textSize="12dp"
+        android:textColor="#DDDDDD"
+        android:text="Stops in this route are serviced in the ffg order" />
+
+    <ListView
+        android:layout_height="wrap_content"
+        android:id="@+id/android:list"
+        android:layout_width="fill_parent"
+        android:textSize="11dp">
+    </ListView>
+
+</LinearLayout>

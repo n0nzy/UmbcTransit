@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Using a FrameLayout because this ViewGroup has only one child element, it is more efficient to use a FrameLayout instead of a RelativeLayout -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_route_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/no_margin"
+    android:paddingBottom="@dimen/no_margin"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame"
+    tools:context="co.ugwu.nonso.umbctransitguide.plainui.RouteDetailsActivity">
+
+</FrameLayout>

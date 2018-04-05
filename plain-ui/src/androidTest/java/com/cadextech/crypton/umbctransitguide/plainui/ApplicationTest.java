@@ -1,4 +1,4 @@
-package co.ugwu.nonso.umbctransit;
+package co.ugwu.nonso.umbctransitguide.plainui;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

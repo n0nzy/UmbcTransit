@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.ugwu.nonso.umbctransit.StopsFragment">
+
+    <LinearLayout
+        android:id="@+id/table_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ui_search_stop"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/ui_agency_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#333333"
+            android:background="#dddddd"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="UMBC" />
+
+        <TextView
+            android:id="@+id/ui_route_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#333333"
+            android:background="#dddddd"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:text="The following routes are currently in service: " />
+
+        <TextView
+            android:id="@+id/route1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="A / B: Arundel/BWI MARC Line" />
+
+        <TextView
+            android:id="@+id/route2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="A / I: Arbutus/Irvington" />
+
+        <TextView
+            android:id="@+id/route3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="DB: Downtown B" />
+
+        <TextView
+            android:id="@+id/route4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="H / S: Halethorpe / Satellite" />
+
+    </LinearLayout>
+
+</FrameLayout>

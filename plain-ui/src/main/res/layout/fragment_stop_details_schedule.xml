@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/no_margin"
+    android:paddingRight="@dimen/no_margin"
+    android:paddingTop="@dimen/no_margin"
+    android:paddingBottom="@dimen/no_margin"
+    android:orientation="vertical"
+    tools:context="co.ugwu.nonso.umbctransitguide.plainui.StopDetailsScheduleFragment">
+
+    <TextView
+        android:id="@+id/textview_stop_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:background="#003366"
+        android:text="@string/default_stop_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/serviced_by"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingStart="5dp"
+            android:gravity="start"
+            android:background="#446699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="@string/desc_stop_details_serviced_by" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:background="#446699"
+            android:textSize="12sp"
+            android:textColor="#DDDDDD"
+            android:text="@string/desc_stop_details_arrival_times" />
+
+    </LinearLayout>
+
+    <!--<TextView
+        android:id="@+id/textview_serviced_by2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:gravity="start"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:background="#333333"
+        android:text="@string/desc_stop_details_serviced_by" />-->
+
+    <TextView
+        android:id="@+id/textview_route_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:gravity="start"
+        android:textSize="14sp"
+        android:textColor="#446699"
+        android:text="@string/default_route_name" />
+
+    <!--<ListView
+        android:id="@+id/listview_busstops"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+</LinearLayout>

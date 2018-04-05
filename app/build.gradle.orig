@@ -2,10 +2,17 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+<<<<<<< HEAD
     buildToolsVersion "27.0.3"
 
     defaultConfig {
+        applicationId "com.cadextech.crypton.umbctransit"
+=======
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
         applicationId "co.ugwu.nonso.umbctransit"
+>>>>>>> no-tab-imp-with-fragments
         minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
@@ -13,8 +20,13 @@ android {
     }
     buildTypes {
         release {
+<<<<<<< HEAD
             //runProguard false
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+=======
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+>>>>>>> no-tab-imp-with-fragments
         }
     }
 }
